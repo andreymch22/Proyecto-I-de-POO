@@ -5,6 +5,8 @@
  */
 package models;
 
+import abstracts.Person;
+
 /**
  *
  * @author Andrey M
