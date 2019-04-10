@@ -15,7 +15,7 @@ public class Cashier extends Person{
     private String password;
     private String photo;//Se tiene que cambiar
 
-    public Cashier(String username, String password, int id, String name,
+    public Cashier(String password, int id, String name,
             String firstPhone, String firstEmail) {
         super(id, name, firstPhone, firstEmail);
         this.password = password;

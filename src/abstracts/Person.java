@@ -13,7 +13,8 @@ import java.util.List;
  * @author Andrey M
  */
 public abstract class Person {
-    //De un cliente se conoce su identificación, el nombre, sus teléfonos y emails
+    /*De un cliente se conoce su identificación, el nombre, sus teléfonos 
+    y emails*/
     private int id;
     private String name;
     private List<String> phonesList = new ArrayList<String>();
