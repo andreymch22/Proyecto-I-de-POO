@@ -14,9 +14,18 @@ import abstracts.Person;
 public class Administrator extends Person{
     private String password;
     private String photo;//Se tiene que cambiar
-
-    public Administrator(String username, String password, String photo, int id,
-            String name, String firstPhone, String firstEmail) {
+    /**
+     * 
+     * @param username
+     * @param password
+     * @param photo
+     * @param id
+     * @param name
+     * @param firstPhone
+     * @param firstEmail 
+     */
+    public Administrator(String username, String password, String photo,
+            int id, String name, String firstPhone, String firstEmail) {
         super(id, name, firstPhone, firstEmail);
         this.password = password;
         this.photo = photo;

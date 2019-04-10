@@ -9,7 +9,8 @@ package enums;
  *
  * @author Andrey M
  */
-public enum Category {
+
+public enum ClientsCategory {
     Gold,
     Silver, 
     Bronze

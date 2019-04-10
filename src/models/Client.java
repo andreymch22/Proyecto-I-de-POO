@@ -6,13 +6,13 @@
 package models;
 
 import abstracts.Person;
-import enums.Category;
+import enums.ClientsCategory;
 /**
  *
  * @author Andrey M
  */
 public class Client extends Person{
-    private Category category;
+    private ClientsCategory category;
     /**
      * 
      * @param id
@@ -22,7 +22,7 @@ public class Client extends Person{
      * @param category 
      */
     public Client(int id, String name, String firstPhone, String firstEmail,
-            Category category) {
+            ClientsCategory category) {
         super(id, name, firstPhone, firstEmail);
         this.category = category;
     }
@@ -30,14 +30,14 @@ public class Client extends Person{
      * 
      * @return category
      */
-    public Category getCategory() {
+    public ClientsCategory getCategory() {
         return category;
     }
     /**
      * 
      * @param category 
      */
-    public void setCategory(Category category) {
+    public void setCategory(ClientsCategory category) {
         this.category = category;
     }   
     
