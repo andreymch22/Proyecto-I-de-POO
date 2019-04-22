@@ -14,6 +14,7 @@ import abstracts.Person;
 public class Administrator extends Person{
     private String password;
     private String photo;//Se tiene que cambiar
+    
     /**
      * 
      * @param username
@@ -31,10 +32,20 @@ public class Administrator extends Person{
         this.photo = photo;
     }
 
+    public Administrator() {
+    }
+    
+    /**
+     * 
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
-
+    /**
+     * 
+     * @param password 
+     */
     public void setPassword(String password) {
         this.password = password;
     }

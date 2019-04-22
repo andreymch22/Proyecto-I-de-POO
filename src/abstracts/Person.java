@@ -32,13 +32,21 @@ public abstract class Person {
         addPhoneToTheList(firstPhone);
         addEmailToTheList(firstEmail);
     }
+    
+    /**
+     * 
+     */
+    public Person() {
+    }
+    
     /**
      * 
      * @return id
      */
     public int getId() {
         return id;
-    }
+    }    
+    
     /**
      * 
      * @param id 
@@ -46,6 +54,7 @@ public abstract class Person {
     public void setId(int id) {
         this.id = id;
     }
+    
     /**
      * 
      * @return name
@@ -53,6 +62,7 @@ public abstract class Person {
     public String getName() {
         return name;
     }
+    
     /**
      * 
      * @param name 
@@ -60,6 +70,7 @@ public abstract class Person {
     public void setName(String name) {
         this.name = name;
     }
+    
     /**
      * 
      * @return phonesList
@@ -67,6 +78,7 @@ public abstract class Person {
     public List<String> getPhonesList() {
         return phonesList;
     }
+    
     /**
      * 
      * @param phonesList 
@@ -74,6 +86,7 @@ public abstract class Person {
     public void setPhonesList(List<String> phonesList) {
         this.phonesList = phonesList;
     }
+    
     /**
      * 
      * @param phone 
@@ -81,6 +94,7 @@ public abstract class Person {
     public void addPhoneToTheList(String phone){
         phonesList.add(phone);
     }
+    
     /**
      * 
      * @return emailsList
@@ -88,6 +102,7 @@ public abstract class Person {
     public List<String> getEmailsList() {
         return emailsList;
     }
+    
     /**
      * 
      * @param emailsList 
@@ -95,13 +110,12 @@ public abstract class Person {
     public void setEmailsList(List<String> emailsList) {
         this.emailsList = emailsList;
     }
+    
     /**
      * 
      * @param email 
      */    
     public void addEmailToTheList(String email){
         emailsList.add(email);
-    }
-    
-    
+    }  
 }

@@ -14,10 +14,36 @@ import abstracts.Person;
 public class Cashier extends Person{
     private String password;
     private String photo;//Se tiene que cambiar
-
+    /**
+     * 
+     * @param password
+     * @param id
+     * @param name
+     * @param firstPhone
+     * @param firstEmail 
+     */
     public Cashier(String password, int id, String name,
             String firstPhone, String firstEmail) {
         super(id, name, firstPhone, firstEmail);
+        this.password = password;
+    }
+    /**
+     * 
+     */
+    public Cashier() {
+    }
+    /**
+     * 
+     * @return password
+     */
+    public String getPassword() {
+        return password;
+    }
+    /**
+     * 
+     * @param password 
+     */
+    public void setPassword(String password) {
         this.password = password;
     }
     
