@@ -16,6 +16,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
      */
     public AdministratorMenu() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -27,21 +28,429 @@ public class AdministratorMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        administratorMenuLabel = new javax.swing.JLabel();
+        departmentLabel = new javax.swing.JLabel();
+        categoryLabel = new javax.swing.JLabel();
+        productLabel = new javax.swing.JLabel();
+        billLabel = new javax.swing.JLabel();
+        createDepartLabel = new javax.swing.JLabel();
+        modifyDepartLabel = new javax.swing.JLabel();
+        eliminateDepartLabel = new javax.swing.JLabel();
+        createCatgLabel = new javax.swing.JLabel();
+        modifyCatgLabel = new javax.swing.JLabel();
+        EliminateProdLabel = new javax.swing.JLabel();
+        eliminateCatgLabel = new javax.swing.JLabel();
+        createProdLabel = new javax.swing.JLabel();
+        modifyProdLabel = new javax.swing.JLabel();
+        invalidateBillLabel = new javax.swing.JLabel();
+        createBillLabel = new javax.swing.JLabel();
+        modifyBillLabel = new javax.swing.JLabel();
+        eliminateClieLabel = new javax.swing.JLabel();
+        cashierLabel = new javax.swing.JLabel();
+        clientLabel = new javax.swing.JLabel();
+        createCashLabel = new javax.swing.JLabel();
+        modifyCashLabel = new javax.swing.JLabel();
+        eliminateCashLabel = new javax.swing.JLabel();
+        createClieLabel = new javax.swing.JLabel();
+        modifyClieLabel = new javax.swing.JLabel();
+        queriesButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Administrator Menu");
+
+        administratorMenuLabel.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        administratorMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        administratorMenuLabel.setText("Administrator Menu");
+
+        departmentLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        departmentLabel.setText("Department");
+
+        categoryLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        categoryLabel.setText("Category");
+
+        productLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        productLabel.setText("Product");
+
+        billLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        billLabel.setText("Bill");
+
+        createDepartLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        createDepartLabel.setForeground(new java.awt.Color(0, 0, 255));
+        createDepartLabel.setText("»Create");
+        createDepartLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        createDepartLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                createDepartLabelMousePressed(evt);
+            }
+        });
+
+        modifyDepartLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        modifyDepartLabel.setForeground(new java.awt.Color(0, 0, 255));
+        modifyDepartLabel.setText("»Modify");
+        modifyDepartLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        modifyDepartLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                modifyDepartLabelMousePressed(evt);
+            }
+        });
+
+        eliminateDepartLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        eliminateDepartLabel.setForeground(new java.awt.Color(0, 0, 255));
+        eliminateDepartLabel.setText("»Eliminate");
+        eliminateDepartLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        eliminateDepartLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                eliminateDepartLabelMousePressed(evt);
+            }
+        });
+
+        createCatgLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        createCatgLabel.setForeground(new java.awt.Color(0, 0, 255));
+        createCatgLabel.setText("»Create");
+        createCatgLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        createCatgLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                createCatgLabelMousePressed(evt);
+            }
+        });
+
+        modifyCatgLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        modifyCatgLabel.setForeground(new java.awt.Color(0, 0, 255));
+        modifyCatgLabel.setText("»Modify");
+        modifyCatgLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        modifyCatgLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                modifyCatgLabelMousePressed(evt);
+            }
+        });
+
+        EliminateProdLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        EliminateProdLabel.setForeground(new java.awt.Color(0, 0, 255));
+        EliminateProdLabel.setText("»Eliminate");
+        EliminateProdLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EliminateProdLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                EliminateProdLabelMousePressed(evt);
+            }
+        });
+
+        eliminateCatgLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        eliminateCatgLabel.setForeground(new java.awt.Color(0, 0, 255));
+        eliminateCatgLabel.setText("»Eliminate");
+        eliminateCatgLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        eliminateCatgLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                eliminateCatgLabelMousePressed(evt);
+            }
+        });
+
+        createProdLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        createProdLabel.setForeground(new java.awt.Color(0, 0, 255));
+        createProdLabel.setText("»Create");
+        createProdLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        createProdLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                createProdLabelMousePressed(evt);
+            }
+        });
+
+        modifyProdLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        modifyProdLabel.setForeground(new java.awt.Color(0, 0, 255));
+        modifyProdLabel.setText("»Modify");
+        modifyProdLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        modifyProdLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                modifyProdLabelMousePressed(evt);
+            }
+        });
+
+        invalidateBillLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        invalidateBillLabel.setForeground(new java.awt.Color(0, 0, 255));
+        invalidateBillLabel.setText("»Invalidate");
+        invalidateBillLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        invalidateBillLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                invalidateBillLabelMousePressed(evt);
+            }
+        });
+
+        createBillLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        createBillLabel.setForeground(new java.awt.Color(0, 0, 255));
+        createBillLabel.setText("»Create");
+        createBillLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        createBillLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                createBillLabelMousePressed(evt);
+            }
+        });
+
+        modifyBillLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        modifyBillLabel.setForeground(new java.awt.Color(0, 0, 255));
+        modifyBillLabel.setText("»Modify");
+        modifyBillLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        modifyBillLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                modifyBillLabelMousePressed(evt);
+            }
+        });
+
+        eliminateClieLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        eliminateClieLabel.setForeground(new java.awt.Color(0, 0, 255));
+        eliminateClieLabel.setText("»Eliminate");
+        eliminateClieLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        eliminateClieLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                eliminateClieLabelMousePressed(evt);
+            }
+        });
+
+        cashierLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        cashierLabel.setText("Cashier");
+
+        clientLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        clientLabel.setText("Client");
+
+        createCashLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        createCashLabel.setForeground(new java.awt.Color(0, 0, 255));
+        createCashLabel.setText("»Create");
+        createCashLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        createCashLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                createCashLabelMousePressed(evt);
+            }
+        });
+
+        modifyCashLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        modifyCashLabel.setForeground(new java.awt.Color(0, 0, 255));
+        modifyCashLabel.setText("»Modify");
+        modifyCashLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        modifyCashLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                modifyCashLabelMousePressed(evt);
+            }
+        });
+
+        eliminateCashLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        eliminateCashLabel.setForeground(new java.awt.Color(0, 0, 255));
+        eliminateCashLabel.setText("»Eliminate");
+        eliminateCashLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        eliminateCashLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                eliminateCashLabelMousePressed(evt);
+            }
+        });
+
+        createClieLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        createClieLabel.setForeground(new java.awt.Color(0, 0, 255));
+        createClieLabel.setText("»Create");
+        createClieLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        createClieLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                createClieLabelMousePressed(evt);
+            }
+        });
+
+        modifyClieLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
+        modifyClieLabel.setForeground(new java.awt.Color(0, 0, 255));
+        modifyClieLabel.setText("»Modify");
+        modifyClieLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        modifyClieLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                modifyClieLabelMousePressed(evt);
+            }
+        });
+
+        queriesButton.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        queriesButton.setText("Queries");
+        queriesButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        queriesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                queriesButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 19, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(cashierLabel)
+                            .addComponent(createCashLabel)
+                            .addComponent(modifyCashLabel)
+                            .addComponent(departmentLabel)
+                            .addComponent(eliminateCashLabel)
+                            .addComponent(createDepartLabel)
+                            .addComponent(modifyDepartLabel)
+                            .addComponent(eliminateDepartLabel))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(eliminateCatgLabel)
+                            .addComponent(invalidateBillLabel)
+                            .addComponent(createBillLabel)
+                            .addComponent(modifyBillLabel)
+                            .addComponent(categoryLabel)
+                            .addComponent(queriesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(billLabel)
+                            .addComponent(createCatgLabel)
+                            .addComponent(modifyCatgLabel))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                            .addComponent(EliminateProdLabel)
+                            .addComponent(createProdLabel)
+                            .addComponent(modifyProdLabel)
+                            .addComponent(eliminateClieLabel)
+                            .addComponent(clientLabel)
+                            .addComponent(createClieLabel)
+                            .addComponent(productLabel)
+                            .addComponent(modifyClieLabel))
+                        .addGap(0, 19, Short.MAX_VALUE))
+                    .addComponent(administratorMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(administratorMenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(departmentLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(productLabel, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(createDepartLabel)
+                            .addComponent(createProdLabel))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(modifyDepartLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(modifyProdLabel, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EliminateProdLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(eliminateDepartLabel, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cashierLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(createCashLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(modifyCashLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(eliminateCashLabel))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(clientLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(createClieLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(modifyClieLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(eliminateClieLabel))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(categoryLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(createCatgLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(modifyCatgLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(eliminateCatgLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(billLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(createBillLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(modifyBillLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(invalidateBillLabel)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(queriesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void createDepartLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createDepartLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_createDepartLabelMousePressed
+
+    private void modifyDepartLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifyDepartLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modifyDepartLabelMousePressed
+
+    private void eliminateDepartLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminateDepartLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminateDepartLabelMousePressed
+
+    private void createCatgLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createCatgLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_createCatgLabelMousePressed
+
+    private void modifyCatgLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifyCatgLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modifyCatgLabelMousePressed
+
+    private void eliminateCatgLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminateCatgLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminateCatgLabelMousePressed
+
+    private void createProdLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createProdLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_createProdLabelMousePressed
+
+    private void modifyProdLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifyProdLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modifyProdLabelMousePressed
+
+    private void EliminateProdLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EliminateProdLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EliminateProdLabelMousePressed
+
+    private void createCashLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createCashLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_createCashLabelMousePressed
+
+    private void modifyCashLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifyCashLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modifyCashLabelMousePressed
+
+    private void eliminateCashLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminateCashLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminateCashLabelMousePressed
+
+    private void createBillLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createBillLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_createBillLabelMousePressed
+
+    private void modifyBillLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifyBillLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modifyBillLabelMousePressed
+
+    private void invalidateBillLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_invalidateBillLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_invalidateBillLabelMousePressed
+
+    private void createClieLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createClieLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_createClieLabelMousePressed
+
+    private void modifyClieLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifyClieLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modifyClieLabelMousePressed
+
+    private void eliminateClieLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminateClieLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminateClieLabelMousePressed
+
+    private void queriesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_queriesButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_queriesButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +488,31 @@ public class AdministratorMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel EliminateProdLabel;
+    private javax.swing.JLabel administratorMenuLabel;
+    private javax.swing.JLabel billLabel;
+    private javax.swing.JLabel cashierLabel;
+    private javax.swing.JLabel categoryLabel;
+    private javax.swing.JLabel clientLabel;
+    private javax.swing.JLabel createBillLabel;
+    private javax.swing.JLabel createCashLabel;
+    private javax.swing.JLabel createCatgLabel;
+    private javax.swing.JLabel createClieLabel;
+    private javax.swing.JLabel createDepartLabel;
+    private javax.swing.JLabel createProdLabel;
+    private javax.swing.JLabel departmentLabel;
+    private javax.swing.JLabel eliminateCashLabel;
+    private javax.swing.JLabel eliminateCatgLabel;
+    private javax.swing.JLabel eliminateClieLabel;
+    private javax.swing.JLabel eliminateDepartLabel;
+    private javax.swing.JLabel invalidateBillLabel;
+    private javax.swing.JLabel modifyBillLabel;
+    private javax.swing.JLabel modifyCashLabel;
+    private javax.swing.JLabel modifyCatgLabel;
+    private javax.swing.JLabel modifyClieLabel;
+    private javax.swing.JLabel modifyDepartLabel;
+    private javax.swing.JLabel modifyProdLabel;
+    private javax.swing.JLabel productLabel;
+    private javax.swing.JButton queriesButton;
     // End of variables declaration//GEN-END:variables
 }

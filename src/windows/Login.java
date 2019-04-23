@@ -24,6 +24,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         errorLabel.setVisible(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -45,10 +46,16 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
+        setLocation(new java.awt.Point(0, 0));
+        setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Courier New", 1, 22)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("FactDigital");
+
+        idField.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        idField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        idField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel2.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -66,6 +73,9 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        passwordField.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        passwordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         errorLabel.setFont(new java.awt.Font("Courier New", 2, 14)); // NOI18N
         errorLabel.setForeground(java.awt.Color.red);
         errorLabel.setText(".");
@@ -78,11 +88,6 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(100, 100, 100)
@@ -94,7 +99,12 @@ public class Login extends javax.swing.JFrame {
                                 .addGap(140, 140, 140)
                                 .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 94, Short.MAX_VALUE))
-                    .addComponent(errorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(errorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -110,7 +120,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(errorLabel)
                 .addGap(29, 29, 29)
                 .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,43 +130,58 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    private void showErrorMessage(String message){
+    private void showErrorMessage(String message){    
         errorLabel.setText(message);
         errorLabel.setVisible(true);
     }
-    
+    /**
+     * 
+     * @param evt 
+     */
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        if(idField.getText().isEmpty() 
-                || passwordField.getText().isEmpty()){
-            showErrorMessage("Missing data to enter");
-        } else {
-            String id = idField.getText();
-            String password = passwordField.getText();                
-            
-            if (Search.searchAdmin(id) != null) {
-                Administrator temp = Search.searchAdmin(id);
-                
-                if(temp.getPassword().equals(password)){
-                    administratorMenu.setVisible(true);
-                    this.setVisible(false);
-                } else {
-                    showErrorMessage("Password is incorrect");
+        try {
+            if(idField.getText().isEmpty() 
+                    || passwordField.getText().isEmpty()){
+                showErrorMessage("Missing data to enter");
+            } else {
+                String id = idField.getText();
+                String password = passwordField.getText();                
+
+                if (Search.searchAdmin(Integer.parseInt(id)) != null) {
+                    Administrator temp 
+                            = Search.searchAdmin(Integer.parseInt(id));
+
+                    if(temp.getPassword().equals(password)){
+                        administratorMenu.setVisible(true);
+                        this.setVisible(false);
+                    } else {
+                        showErrorMessage("Password is incorrect");
+                        passwordField.setText("");
+                    }
+                }
+                if (Search.searchCashier(Integer.parseInt(id)) != null) {
+                    Cashier temp 
+                            = Search.searchCashier(Integer.parseInt(id));
+
+                    if(temp.getPassword().equals(password)){
+                        cashierMenu.setVisible(true);
+                        this.setVisible(false);
+                    } else {
+                        showErrorMessage("Password is incorrect");
+                        passwordField.setText("");
+                    }
+                } 
+                else {
+                    showErrorMessage("No user was found with this ID");
+                    idField.setText("");
                     passwordField.setText("");
                 }
-            }
-            if (Search.searchCashier(id) != null) {
-                Cashier temp = Search.searchCashier(id);
-                
-                if(temp.getPassword().equals(password)){
-                    
-                } else {
-                    showErrorMessage("Password is incorrect");
-                    passwordField.setText("");
-                }
-            } 
-            else {
-            }
-        }
+            }            
+        } catch (Exception exception) {
+            showErrorMessage("The ID only contains numbers");
+            idField.setText("");
+            passwordField.setText("");
+        }       
     }//GEN-LAST:event_loginButtonActionPerformed
 
     /**

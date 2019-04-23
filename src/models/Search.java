@@ -15,9 +15,9 @@ public class Search {
      * @param id
      * @return temp or null 
      */
-    public static Administrator searchAdmin(String id){
+    public static Administrator searchAdmin(int id){
         for (Administrator temp : Main.administratorsList) {
-            if (id.equals(temp.getId())) {
+            if (temp.getId() == id) {
                 return temp;
             }
         }
@@ -28,18 +28,18 @@ public class Search {
      * @param id
      * @return temp or null 
      */
-    public static Cashier searchCashier(String id){
+    public static Cashier searchCashier(int id){
         for (Cashier temp : Main.cashiersList) {
-            if (id.equals(temp.getId())) {
+            if (temp.getId() == id) {
                 return temp;
             }
         }
         return null;
     }    
     
-    public static Client searchClient(String id){
+    public static Client searchClient(int id){
         for (Client temp : Main.clientsList) {
-            if (id.equals(temp.getId())) {
+            if (temp.getId() == id) {
                 return temp;
             }
         }
