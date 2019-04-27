@@ -1,13 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package windows;
+/* AdministratorMenu
+*
+* 1.0v 
+*
+* 26/04/19
+*
+* Copyright
+*/
+package windows.menu;
+
+import windows.added.AddNewClient;
 
 /**
- *
- * @author Andrey M
+ * 
+ * @version 1.0 
+ * @author Andrey Marín Chacón
  */
 public class AdministratorMenu extends javax.swing.JFrame {
 
@@ -54,25 +60,32 @@ public class AdministratorMenu extends javax.swing.JFrame {
         createClieLabel = new javax.swing.JLabel();
         modifyClieLabel = new javax.swing.JLabel();
         queriesButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administrator Menu");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         administratorMenuLabel.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
         administratorMenuLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         administratorMenuLabel.setText("Administrator Menu");
+        getContentPane().add(administratorMenuLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, -1));
 
         departmentLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         departmentLabel.setText("Department");
+        getContentPane().add(departmentLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         categoryLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         categoryLabel.setText("Category");
+        getContentPane().add(categoryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, -1, -1));
 
         productLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         productLabel.setText("Product");
+        getContentPane().add(productLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 50, -1, -1));
 
         billLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         billLabel.setText("Bill");
+        getContentPane().add(billLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, -1, -1));
 
         createDepartLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         createDepartLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -83,6 +96,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 createDepartLabelMousePressed(evt);
             }
         });
+        getContentPane().add(createDepartLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
         modifyDepartLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         modifyDepartLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -93,6 +107,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 modifyDepartLabelMousePressed(evt);
             }
         });
+        getContentPane().add(modifyDepartLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
         eliminateDepartLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         eliminateDepartLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -103,6 +118,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 eliminateDepartLabelMousePressed(evt);
             }
         });
+        getContentPane().add(eliminateDepartLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
         createCatgLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         createCatgLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -113,6 +129,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 createCatgLabelMousePressed(evt);
             }
         });
+        getContentPane().add(createCatgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, -1, -1));
 
         modifyCatgLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         modifyCatgLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -123,6 +140,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 modifyCatgLabelMousePressed(evt);
             }
         });
+        getContentPane().add(modifyCatgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
 
         EliminateProdLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         EliminateProdLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -133,6 +151,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 EliminateProdLabelMousePressed(evt);
             }
         });
+        getContentPane().add(EliminateProdLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, -1, -1));
 
         eliminateCatgLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         eliminateCatgLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -143,6 +162,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 eliminateCatgLabelMousePressed(evt);
             }
         });
+        getContentPane().add(eliminateCatgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, -1, -1));
 
         createProdLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         createProdLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -153,6 +173,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 createProdLabelMousePressed(evt);
             }
         });
+        getContentPane().add(createProdLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, -1, -1));
 
         modifyProdLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         modifyProdLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -163,6 +184,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 modifyProdLabelMousePressed(evt);
             }
         });
+        getContentPane().add(modifyProdLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
 
         invalidateBillLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         invalidateBillLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -173,6 +195,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 invalidateBillLabelMousePressed(evt);
             }
         });
+        getContentPane().add(invalidateBillLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, -1));
 
         createBillLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         createBillLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -183,6 +206,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 createBillLabelMousePressed(evt);
             }
         });
+        getContentPane().add(createBillLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, -1, -1));
 
         modifyBillLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         modifyBillLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -193,6 +217,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 modifyBillLabelMousePressed(evt);
             }
         });
+        getContentPane().add(modifyBillLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
 
         eliminateClieLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         eliminateClieLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -203,12 +228,15 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 eliminateClieLabelMousePressed(evt);
             }
         });
+        getContentPane().add(eliminateClieLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
 
         cashierLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         cashierLabel.setText("Cashier");
+        getContentPane().add(cashierLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
 
         clientLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         clientLabel.setText("Client");
+        getContentPane().add(clientLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, -1, -1));
 
         createCashLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         createCashLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -219,6 +247,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 createCashLabelMousePressed(evt);
             }
         });
+        getContentPane().add(createCashLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
 
         modifyCashLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         modifyCashLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -229,6 +258,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 modifyCashLabelMousePressed(evt);
             }
         });
+        getContentPane().add(modifyCashLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, -1));
 
         eliminateCashLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         eliminateCashLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -239,6 +269,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 eliminateCashLabelMousePressed(evt);
             }
         });
+        getContentPane().add(eliminateCashLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
         createClieLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         createClieLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -249,6 +280,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 createClieLabelMousePressed(evt);
             }
         });
+        getContentPane().add(createClieLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, -1, -1));
 
         modifyClieLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         modifyClieLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -259,119 +291,22 @@ public class AdministratorMenu extends javax.swing.JFrame {
                 modifyClieLabelMousePressed(evt);
             }
         });
+        getContentPane().add(modifyClieLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, -1, -1));
 
         queriesButton.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         queriesButton.setText("Queries");
-        queriesButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        queriesButton.setBorder(null);
         queriesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 queriesButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(queriesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 130, 40));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 19, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(cashierLabel)
-                            .addComponent(createCashLabel)
-                            .addComponent(modifyCashLabel)
-                            .addComponent(departmentLabel)
-                            .addComponent(eliminateCashLabel)
-                            .addComponent(createDepartLabel)
-                            .addComponent(modifyDepartLabel)
-                            .addComponent(eliminateDepartLabel))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(eliminateCatgLabel)
-                            .addComponent(invalidateBillLabel)
-                            .addComponent(createBillLabel)
-                            .addComponent(modifyBillLabel)
-                            .addComponent(categoryLabel)
-                            .addComponent(queriesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(billLabel)
-                            .addComponent(createCatgLabel)
-                            .addComponent(modifyCatgLabel))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(EliminateProdLabel)
-                            .addComponent(createProdLabel)
-                            .addComponent(modifyProdLabel)
-                            .addComponent(eliminateClieLabel)
-                            .addComponent(clientLabel)
-                            .addComponent(createClieLabel)
-                            .addComponent(productLabel)
-                            .addComponent(modifyClieLabel))
-                        .addGap(0, 19, Short.MAX_VALUE))
-                    .addComponent(administratorMenuLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(administratorMenuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(departmentLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(productLabel, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(createDepartLabel)
-                            .addComponent(createProdLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(modifyDepartLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(modifyProdLabel, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(EliminateProdLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(eliminateDepartLabel, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(cashierLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(createCashLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(modifyCashLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(eliminateCashLabel))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(clientLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(createClieLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(modifyClieLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(eliminateClieLabel))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(categoryLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(createCatgLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(modifyCatgLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(eliminateCatgLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(billLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(createBillLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(modifyBillLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(invalidateBillLabel)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(queriesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
+        jButton1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        jButton1.setText("Return");
+        jButton1.setBorder(null);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 130, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -437,7 +372,8 @@ public class AdministratorMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_invalidateBillLabelMousePressed
 
     private void createClieLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createClieLabelMousePressed
-        // TODO add your handling code here:
+        new AddNewClient().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_createClieLabelMousePressed
 
     private void modifyClieLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifyClieLabelMousePressed
@@ -506,6 +442,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
     private javax.swing.JLabel eliminateClieLabel;
     private javax.swing.JLabel eliminateDepartLabel;
     private javax.swing.JLabel invalidateBillLabel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel modifyBillLabel;
     private javax.swing.JLabel modifyCashLabel;
     private javax.swing.JLabel modifyCatgLabel;

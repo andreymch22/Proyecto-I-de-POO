@@ -1,16 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* Person
+*
+* 1.0v 
+*
+* 26/04/19
+*
+* Copyright
+*/
 package abstracts;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author Andrey M
+ * 
+ * @version 1.0 
+ * @author Andrey Marín Chacón
  */
 public abstract class Person {
     /*De un cliente se conoce su identificación, el nombre, sus teléfonos 
@@ -118,4 +122,7 @@ public abstract class Person {
     public void addEmailToTheList(String email){
         emailsList.add(email);
     }  
+
+    
+    
 }

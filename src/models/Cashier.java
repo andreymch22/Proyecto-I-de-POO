@@ -1,19 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* Cashier
+*
+* 1.0v 
+*
+* 26/04/19
+*
+* Copyright
+*/
 package models;
 
 import abstracts.Person;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 /**
- *
- * @author Andrey M
+ * 
+ * @version 1.0 
+ * @author Andrey Marín Chacón
+ *//**
+ * 
+ * @version 1.0 
+ * @author Andrey Marín Chacón
+ *//**
+ * 
+ * @version 1.0 
+ * @author Andrey Marín Chacón
  */
-public class Cashier extends Person{
+public class Cashier extends Person {
     private String password;
-    private String photo;//Se tiene que cambiar
+    private Image photo;
     /**
      * 
      * @param password
@@ -21,11 +37,19 @@ public class Cashier extends Person{
      * @param name
      * @param firstPhone
      * @param firstEmail 
+     * @param imageDirection 
      */
     public Cashier(String password, int id, String name,
-            String firstPhone, String firstEmail) {
+            String firstPhone, String firstEmail,File imageDirection){
         super(id, name, firstPhone, firstEmail);
         this.password = password;
+        try {
+            this.photo = ImageIO.read(imageDirection);
+        } catch (IOException exception) {
+            System.out.println("La imagen no fue encontrada.");//change_me
+        }
+        
+        
     }
     /**
      * 

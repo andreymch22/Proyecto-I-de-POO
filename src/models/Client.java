@@ -1,15 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* Client
+*
+* 1.0v 
+*
+* 26/04/19
+*
+* Copyright
+*/
 package models;
 
 import abstracts.Person;
 import enums.ClientsCategory;
 /**
- *
- * @author Andrey M
+ * 
+ * @version 1.0 
+ * @author Andrey Marín Chacón
  */
 public class Client extends Person{
     private ClientsCategory category;

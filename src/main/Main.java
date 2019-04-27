@@ -1,18 +1,25 @@
-/*
- */
+/* Main
+*
+* 1.0v 
+*
+* 26/04/19
+*
+* Copyright
+*/
 package main;
 
-import abstracts.Person;
 import models.Administrator;
 import models.Cashier;
 import models.Client;
 import java.util.ArrayList;
 import java.util.List;
 import windows.Login;
+import enums.ClientsCategory;
 
 /**
- *
- * @author Andrey M
+ * 
+ * @version 1.0 
+ * @author Andrey Marín Chacón
  */
 public class Main {
 
@@ -21,6 +28,7 @@ public class Main {
      * Fecha de finalizacion: ?/04/2019
      * @param args the command line arguments
      */
+    public static final float VAT = (float) 0.13;
     
     public static List <Administrator> administratorsList = 
             new ArrayList <Administrator>();
@@ -33,8 +41,17 @@ public class Main {
      * 
      */
     public static void loadData() {
-        cashiersList.add(new Cashier("123", 123, "Marta", "123456789",
-                "marta@gmail.com"));
+//        cashiersList.add(new Cashier("123", 123, "Marta", "123456789",
+//                "marta@gmail.com"));
+//        cashiersList.add(new Cashier("234", 234, "Marco", "234567890",
+//                "marco12@gmail.com"));
+//        cashiersList.add(new Cashier("345", 345, "Elena", "103456789",
+//                "maxx11@gmail.com")); 
+//        cashiersList.add(new Cashier("456", 456, "Carlos", "323456089",
+//                "red333@gmail.com"));
+        
+        administratorsList.add(new Administrator("1123", 1123, "Sofia",
+                "80120912", "sofia321@gmail.com"));
     }
     /**
      * 
@@ -45,7 +62,9 @@ public class Main {
 //        for(Person perTemp : personsList) {
 //            System.out.println(perTemp.getName());
 //        }
-        new Login().setVisible(true);
+//        new Login().setVisible(true);
+//        System.out.println(VAT);
+
     }
     
 }
