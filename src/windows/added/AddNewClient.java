@@ -5,10 +5,14 @@
  */
 package windows.added;
 
+import abstracts.Person;
 import windows.menu.AdministratorMenu;
 import windows.menu.CashierMenu;
 import enums.ClientsCategory;
+import javax.swing.JOptionPane;
 import main.Main;
+import models.Client;
+import models.Search;
 /**
  *
  * @author Andrey M
@@ -251,9 +255,80 @@ public class AddNewClient extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private void showErrorMessage(String message){    
+        errorLabel.setText(message);
+        errorLabel.setVisible(true);
+    }
+    private boolean verifyFieldsAreNotEmpty(){
+        if(idField.getText().isEmpty() || fullNameField.getText().isEmpty() 
+                ||phoneField.getText().isEmpty() 
+                || emailField.getText().isEmpty()){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        // TODO add your handling code here:
+        if (!verifyFieldsAreNotEmpty()) {
+            showErrorMessage("You must fill in the obligatory spaces.");
+        } else {
+            int id = 0;
+            try {  
+                id = Integer.parseInt(idField.getText());
+               
+                if (!Search.globalUserSearch(id)) {
+                    showErrorMessage("There is already a registered "
+                            + "user with this ID");
+                    idField.setText("");
+                    return;
+                }
+            } catch (NumberFormatException exception) {
+                showErrorMessage("The ID should only have numbers");
+                idField.setText("");
+                return;
+            }
+            ClientsCategory cc;
+            if(categoryComboBox.getSelectedItem().toString() == "Gold"){
+                cc = ClientsCategory.Gold;
+            }else if(categoryComboBox.getSelectedItem().toString() 
+                    == "Silver"){
+                cc = ClientsCategory.Silver;
+            }else{
+                cc = ClientsCategory.Bronze;
+            }
+            Client newClient = new Client(id, fullNameField.getText(),
+                    phoneField.getText(), emailField.getText(), cc);
+            if (!secondEmailField.getText().isEmpty()) {
+                if (!emailField.getText().equals(
+                        secondEmailField.getText())) {
+                    newClient.addEmailToTheList(secondEmailField.getText());
+                }else{
+                    showErrorMessage("the mails are the same");
+                    secondEmailField.setText("");
+                    return;
+                }                
+            }  
+            if (!secondPhoneField.getText().isEmpty()){
+                if (!phoneField.getText().equals(
+                        secondPhoneField.getText())) {
+                    newClient.addPhoneToTheList(secondPhoneField.getText());
+                } else {
+                    showErrorMessage("the phones are the same");
+                    secondPhoneField.setText("");
+                    return;
+                }
+            }
+            Main.clients.add(newClient);
+            JOptionPane.showMessageDialog(this, "The client was added"
+                    + " successfully");
+            if(Main.administratorConnected != null){
+                Main.administratorMenu.setVisible(true);
+            }else{
+                Main.cashierMenu.setVisible(true);
+            }
+            this.dispose();
+        }
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void goBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackButtonActionPerformed

@@ -7,13 +7,10 @@
 * Copyright
 */
 package windows;
-import windows.menu.AdministratorMenu;
-import windows.menu.CashierMenu;
-import abstracts.Person;
-import main.Main;
+
 import models.Administrator;
 import models.Cashier;
-import models.Client;
+import main.Main;
 import models.Search;
 /**
  * 
@@ -21,9 +18,7 @@ import models.Search;
  * @author Andrey Marín Chacón
  */
 public class Login extends javax.swing.JFrame { 
-    public static AdministratorMenu administratorMenu 
-            = new AdministratorMenu();
-    public static CashierMenu cashierMenu = new CashierMenu();
+
     /**
      * Creates new form Login
      */
@@ -91,30 +86,24 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(138, 138, 138)
+                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(94, 94, 94)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(errorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(94, 94, 94)
-                                .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(94, 94, 94)
-                                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 94, Short.MAX_VALUE)))
+                            .addComponent(idField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 94, Short.MAX_VALUE))
+                    .addComponent(errorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,11 +117,11 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(errorLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,11 +132,16 @@ public class Login extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void clear(){
+        idField.setText("");
+        passwordField.setText("");
+    }
     
     private void showErrorMessage(String message){    
         errorLabel.setText(message);
@@ -171,11 +165,16 @@ public class Login extends javax.swing.JFrame {
                             = Search.searchAdmin(Integer.parseInt(id));
 
                     if(temp.getPassword().equals(password)){
-                        administratorMenu.setVisible(true);
+                        Main.administratorConnected = temp;
+                        Main.administratorMenu.setVisible(true);
+                        errorLabel.setVisible(false);
                         this.setVisible(false);
+                        clear();
+                        return;
                     } else {
                         showErrorMessage("Password is incorrect");
                         passwordField.setText("");
+                        return;
                     }
                 }
                 if (Search.searchCashier(Integer.parseInt(id)) != null) {
@@ -183,11 +182,15 @@ public class Login extends javax.swing.JFrame {
                             = Search.searchCashier(Integer.parseInt(id));
 
                     if(temp.getPassword().equals(password)){
-                        cashierMenu.setVisible(true);
+                        Main.cashierConnected = temp;
+                        Main.cashierMenu.setVisible(true);
                         this.setVisible(false);
+                        clear();
+                        return;
                     } else {
                         showErrorMessage("Password is incorrect");
                         passwordField.setText("");
+                        return;
                     }
                 } 
                 else {
@@ -196,11 +199,12 @@ public class Login extends javax.swing.JFrame {
                     passwordField.setText("");
                 }
             }            
-        } catch (Exception exception) {
+        } catch (NumberFormatException exception) {
             showErrorMessage("The ID only contains numbers");
             idField.setText("");
             passwordField.setText("");
         }       
+
     }//GEN-LAST:event_loginButtonActionPerformed
 
     /**

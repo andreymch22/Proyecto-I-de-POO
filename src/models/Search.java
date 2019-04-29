@@ -20,7 +20,7 @@ public class Search {
      * @return temp or null 
      */
     public static Administrator searchAdmin(int id){
-        for (Administrator temp : Main.administratorsList) {
+        for (Administrator temp : Main.administrators) {
             if (temp.getId() == id) {
                 return temp;
             }
@@ -33,20 +33,69 @@ public class Search {
      * @return temp or null 
      */
     public static Cashier searchCashier(int id){
-        for (Cashier temp : Main.cashiersList) {
+        for (Cashier temp : Main.cashiers) {
             if (temp.getId() == id) {
                 return temp;
             }
         }
         return null;
     }    
-    
+    /**
+     * 
+     * @param id
+     * @return temp or null
+     */
     public static Client searchClient(int id){
-        for (Client temp : Main.clientsList) {
+        for (Client temp : Main.clients) {
             if (temp.getId() == id) {
                 return temp;
             }
         }
         return null;
     }
+    
+    public static boolean globalUserSearch(int id){
+        if((searchAdmin(id) == null) && (searchCashier(id) == null)
+                && (searchClient(id)) == null){
+            return true;
+        }else{
+            return false;
+        }        
+    }
+    
+    public static Product searchProduct(String code){
+        for (Product temp : Main.inventory) {
+            if (temp.getCode().equals(code)) {
+                return temp;
+            }
+        }
+        return null;
+    }
+    
+    public static Bill searchBill(String code){
+        for (Bill temp : Main.bills) {
+            if (temp.getCode().equals(code)) {
+                return temp;
+            }
+        }
+        return null;
+    }
+        
+    public static Department searchDepartment(String code){
+        for (Department temp : Main.departments) {
+            if (temp.getCode().equals(code)) {
+                return temp;
+            }
+        }
+        return null;
+    }   
+    
+    public static ProductCategory searchProductCategory(String code){
+        for (ProductCategory temp : Main.categories) {
+            if (temp.getCode().equals(code)) {
+                return temp;
+            }
+        }
+        return null;
+    }   
 }

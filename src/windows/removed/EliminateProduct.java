@@ -5,6 +5,12 @@
  */
 package windows.removed;
 
+import javax.swing.JOptionPane;
+import main.Main;
+import models.Client;
+import models.Product;
+import models.Search;
+
 /**
  *
  * @author Andrey M
@@ -16,6 +22,10 @@ public class EliminateProduct extends javax.swing.JFrame {
      */
     public EliminateProduct() {
         initComponents();
+                this.setLocationRelativeTo(null);
+        for (Product temp : Main.inventory) {
+            productsComboBox.addItem(temp.getCode() + "/" + temp.getName());
+        }
     }
 
     /**
@@ -28,18 +38,65 @@ public class EliminateProduct extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        productsComboBox = new javax.swing.JComboBox<>();
+        deleteButton = new javax.swing.JButton();
+        goBackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Courier New", 1, 16)); // NOI18N
+        jLabel1.setText("Select the product to be deleted(Code/Name):");
+
+        productsComboBox.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+
+        deleteButton.setFont(new java.awt.Font("Courier New", 1, 16)); // NOI18N
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+
+        goBackButton.setFont(new java.awt.Font("Courier New", 1, 16)); // NOI18N
+        goBackButton.setText("Go Back");
+        goBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goBackButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(productsComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(deleteButton)
+                        .addGap(74, 74, 74)
+                        .addComponent(goBackButton)
+                        .addGap(20, 20, 20)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(productsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deleteButton)
+                    .addComponent(goBackButton))
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -55,6 +112,28 @@ public class EliminateProduct extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void goBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackButtonActionPerformed
+        Main.administratorMenu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_goBackButtonActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+                try {
+            //Take the ID of the selected item in the comboBox
+            String productCode = productsComboBox.getSelectedItem().toString()
+                .split("/")[0];
+            Main.inventory.remove(Search.searchProduct(productCode));
+            JOptionPane.showMessageDialog(this, "The client was "
+                    + "successfully removed");        
+        } catch (NullPointerException exception) {
+            JOptionPane.showMessageDialog(this, "There are no registered "
+                    + "clients");   
+        }finally{
+            Main.administratorMenu.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_deleteButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,6 +171,10 @@ public class EliminateProduct extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton goBackButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JComboBox<String> productsComboBox;
     // End of variables declaration//GEN-END:variables
 }

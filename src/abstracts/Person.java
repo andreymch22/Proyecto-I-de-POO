@@ -36,13 +36,7 @@ public abstract class Person {
         addPhoneToTheList(firstPhone);
         addEmailToTheList(firstEmail);
     }
-    
-    /**
-     * 
-     */
-    public Person() {
-    }
-    
+
     /**
      * 
      * @return id

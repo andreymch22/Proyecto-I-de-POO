@@ -9,6 +9,10 @@
 package models;
 
 import abstracts.Person;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 /**
  * 
@@ -17,7 +21,7 @@ import abstracts.Person;
  */
 public class Administrator extends Person{
     private String password;
-    private String photo;//Se tiene que cambiar
+    private Image photo;//Se tiene que cambiar
     
     /**
      * 
@@ -30,13 +34,14 @@ public class Administrator extends Person{
      * @param firstEmail 
      */
     public Administrator(String password, int id, String name,
-            String firstPhone, String firstEmail) {
+            String firstPhone, String firstEmail,File imageDirection) {
         super(id, name, firstPhone, firstEmail);
         this.password = password;
-        //this.photo = photo;
-    }
-
-    public Administrator() {
+        try {
+            this.photo = ImageIO.read(imageDirection);
+        } catch (IOException exception) {
+            System.out.println("La imagen no fue encontrada.");//change_me
+        }
     }
     
     /**

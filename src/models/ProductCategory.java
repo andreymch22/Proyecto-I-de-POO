@@ -10,33 +10,33 @@ package models;
  * @author Andrey M
  */
 public class ProductCategory {
-    private String id;
+    private String code;
     private String description;
     
     /**
      * 
-     * @param id
+     * @param code
      * @param description 
      */
-    public ProductCategory(String id, String description) {
-        this.id = id;
+    public ProductCategory(String code, String description) {
+        this.code = code;
         this.description = description;
     }
     
     /**
      * 
-     * @return id
+     * @return code
      */
-    public String getId() {
-        return id;
+    public String getCode() {
+        return code;
     }
     
     /**
      * 
-     * @param id 
+     * @param code 
      */
-    public void setId(String id) {
-        this.id = id;
+    public void setCode(String code) {
+        this.code = code;
     }
     
     /**

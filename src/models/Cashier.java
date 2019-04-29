@@ -18,44 +18,28 @@ import javax.imageio.ImageIO;
  * 
  * @version 1.0 
  * @author Andrey Marín Chacón
- *//**
- * 
- * @version 1.0 
- * @author Andrey Marín Chacón
- *//**
- * 
- * @version 1.0 
- * @author Andrey Marín Chacón
  */
 public class Cashier extends Person {
     private String password;
-    private Image photo;
-    /**
-     * 
-     * @param password
-     * @param id
-     * @param name
-     * @param firstPhone
-     * @param firstEmail 
-     * @param imageDirection 
-     */
-    public Cashier(String password, int id, String name,
-            String firstPhone, String firstEmail,File imageDirection){
+    private String entryDate;
+    private float salary;
+    private String entryTime;
+    private String departureTime;
+    private File imagePath;
+
+    public Cashier(String password, String entryDate, float salary,
+            String entryTime, String departureTime, File imagePath,
+            int id, String name, String firstPhone, String firstEmail) {
         super(id, name, firstPhone, firstEmail);
         this.password = password;
-        try {
-            this.photo = ImageIO.read(imageDirection);
-        } catch (IOException exception) {
-            System.out.println("La imagen no fue encontrada.");//change_me
-        }
-        
-        
+        this.entryDate = entryDate;
+        this.salary = salary;
+        this.entryTime = entryTime;
+        this.departureTime = departureTime;
+        this.imagePath = imagePath;
     }
-    /**
-     * 
-     */
-    public Cashier() {
-    }
+
+
     /**
      * 
      * @return password
