@@ -72,8 +72,8 @@ public class Search {
         return null;
     }
     
-    public static Bill searchBill(String code){
-        for (Bill temp : Main.bills) {
+    public static Receipt searchReceipt(String code){
+        for (Receipt temp : Main.receipts) {
             if (temp.getCode().equals(code)) {
                 return temp;
             }

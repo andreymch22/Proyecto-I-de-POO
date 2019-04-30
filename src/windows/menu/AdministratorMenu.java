@@ -160,7 +160,7 @@ public class AdministratorMenu extends javax.swing.JFrame {
         productLabel.setText("Product");
 
         billLabel.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
-        billLabel.setText("Bill");
+        billLabel.setText("Receipt");
 
         createDepartLabel.setFont(new java.awt.Font("Courier New", 0, 16)); // NOI18N
         createDepartLabel.setForeground(new java.awt.Color(0, 0, 255));
@@ -455,17 +455,17 @@ public class AdministratorMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_eliminateCashLabelMousePressed
 
     private void createBillLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createBillLabelMousePressed
-        new AddNewBill().setVisible(true);
+        new AddNewReceipt().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_createBillLabelMousePressed
 
     private void modifyBillLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifyBillLabelMousePressed
-        new ModifyBill().setVisible(true);
+        new ModifyReceipt().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_modifyBillLabelMousePressed
 
     private void invalidateBillLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_invalidateBillLabelMousePressed
-        new InvalidateBill().setVisible(true);
+        new InvalidateReceipt().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_invalidateBillLabelMousePressed
 

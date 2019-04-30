@@ -16,10 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 import windows.Login;
 import java.io.File;
-import models.Bill;
+import models.Receipt;
 import models.Department;
 import models.Product;
 import models.ProductCategory;
+import models.ProductToBuy;
 import models.Search;
 import windows.menu.AdministratorMenu;
 import windows.menu.CashierMenu;
@@ -53,7 +54,7 @@ public class Main {
     public static List <Cashier> cashiers = new ArrayList <Cashier>();
     public static List <Client> clients = new ArrayList <Client>();
     public static List <Product> inventory = new ArrayList <Product>();
-    public static List <Bill> bills = new ArrayList <Bill>();
+    public static List <Receipt> receipts = new ArrayList <Receipt>();
     public static List <Department> departments 
             = new ArrayList <Department>();
     public static List <ProductCategory> categories 
@@ -63,6 +64,8 @@ public class Main {
     public static Administrator administratorConnected = null;    
     public static Cashier cashierConnected = null;
     
+    //Variables
+    public static int receiptCode = 0;
     
     /**
      * Method that loads the data to the static lists
@@ -124,13 +127,17 @@ public class Main {
         File milkSemiPhotoPath = new File("src" + File.separator + "Images" 
                 + File.separator + "Leche  2%  Grasa Dos Pinos 1.8 L.png");
         File milkInPhotoPath = new File("src" + File.separator + "Images" 
-                + File.separator + "Leche  2%  Grasa Dos Pinos 1.8 L.png");
+                + File.separator + "leche-descremada-dos-pinos-in-line-0-"
+                        + "15-kg.jpg");
         File tunaOilPhotoPath = new File("src" + File.separator + "Images" 
-                + File.separator + "Leche  2%  Grasa Dos Pinos 1.8 L.png");
+                + File.separator + "PRONTO ATUN LOMO EN TROZOS EN ACEITE "
+                        + "lata 354 g.png");
         File tunaWathPhotoPath = new File("src" + File.separator + "Images" 
-                + File.separator + "Leche  2%  Grasa Dos Pinos 1.8 L.png");
+                + File.separator + "PRONTO ATUN LOMO EN TROZOS EN AGUA "
+                        + "lata 160 g.png");
         File colgTripPhotoPath = new File("src" + File.separator + "Images" 
-                + File.separator + "Leche  2%  Grasa Dos Pinos 1.8 L.png");
+                + File.separator + "Pasta Dental Colgate Triple Acción 160"
+                        + " mL.jpg");
         
         //Adding the products
         inventory.add(new Product("P-001", "Leche Semidescremada Dos Pinos",
@@ -156,6 +163,31 @@ public class Main {
         inventory.add(new Product("P-020", "Samsung Refrigeradora",
                 Search.searchProductCategory("C-004"), 200000, 210000,
                 "20/03/2019", "Color: negra", 5, (float)0.10, true));
+        //Adding the receipts
+        Receipt receipt1 = new Receipt();
+        receipt1.setClient(Search.searchClient(987));
+        receipt1.addProduct(new ProductToBuy(
+                Search.searchProduct("P-023"), 2));
+        Search.searchProduct("P-023").setQuantityAvailable(
+                Search.searchProduct("P-023").getQuantityAvailable() - 2);
+        
+        receipt1.addProduct(new ProductToBuy(
+                Search.searchProduct("P-012"),5));
+        Search.searchProduct("P-012").setQuantityAvailable(
+                Search.searchProduct("P-012").getQuantityAvailable() - 5);
+        receipt1.calculateTotalSubtotalAndVAT();
+        
+        Receipt receipt2 = new Receipt();
+        receipt2.setClient(Search.searchClient(876));
+        receipt2.addProduct(new ProductToBuy(
+                Search.searchProduct("P-002"), 6));
+        Search.searchProduct("P-002").setQuantityAvailable(
+                Search.searchProduct("P-002").getQuantityAvailable() - 6);
+        
+        receipt2.calculateTotalSubtotalAndVAT();
+        
+        receipts.add(receipt1);
+        receipts.add(receipt2);
     }
     
     /**
@@ -165,7 +197,6 @@ public class Main {
     public static void main(String[] args) {
         loadData();
         login.setVisible(true);
-
     }
     
 }

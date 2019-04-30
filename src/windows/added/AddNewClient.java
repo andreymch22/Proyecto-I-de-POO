@@ -333,9 +333,9 @@ public class AddNewClient extends javax.swing.JFrame {
 
     private void goBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goBackButtonActionPerformed
         if(Main.administratorConnected != null){
-            new AdministratorMenu().setVisible(true);//CHANGE_ME            
+            new AdministratorMenu().setVisible(true);            
         }else{
-            new CashierMenu().setVisible(true);//CHANGE_ME  
+            new CashierMenu().setVisible(true);
         }
         this.dispose();
     }//GEN-LAST:event_goBackButtonActionPerformed

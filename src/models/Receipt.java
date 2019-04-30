@@ -14,7 +14,7 @@ import main.Main;
  *
  * @author Andrey M
  */
-public class Bill {
+public class Receipt {
     private String code;
     private Client client;
     private List <ProductToBuy> productsToBuy;
@@ -27,13 +27,16 @@ public class Bill {
      * @param code
      * @param client 
      */
-    public Bill(String code, Client client) {
-        this.code = code;
-        this.client = client;
+    public Receipt() {
+        Main.receiptCode++;
+        this.code = Integer.toString(Main.receiptCode);
+        this.client = null;
         this.productsToBuy = new ArrayList <ProductToBuy>(); 
         this.subtotal =  0;
         this.total = 0;
     }
+    
+    
     /**
      * 
      * @return 
@@ -108,7 +111,7 @@ public class Bill {
      * 
      * @param ptb 
      */
-    public void addProduct(ProductToBuy ptb){
+    public void addProduct(ProductToBuy ptb){       
         productsToBuy.add(ptb);
     }
     /**
